@@ -14,6 +14,7 @@
 		A49E9FD8264FF09C00E5B7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A49E9FD7264FF09C00E5B7CA /* Assets.xcassets */; };
 		A49E9FDB264FF09C00E5B7CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49E9FD9264FF09C00E5B7CA /* LaunchScreen.storyboard */; };
 		A49E9FEE26592A1800E5B7CA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49E9FED26592A1800E5B7CA /* GameScene.swift */; };
+		A4B47F8A2674D4B4007020A1 /* curiousing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4B47F892674D4B4007020A1 /* curiousing.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A49E9FDA264FF09C00E5B7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A49E9FDC264FF09C00E5B7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A49E9FED26592A1800E5B7CA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A4B47F892674D4B4007020A1 /* curiousing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = curiousing.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A49E9FD0264FF09A00E5B7CA /* SceneDelegate.swift */,
 				A49E9FD2264FF09A00E5B7CA /* ViewController.swift */,
 				A49E9FD4264FF09A00E5B7CA /* Main.storyboard */,
+				A4B47F892674D4B4007020A1 /* curiousing.mp3 */,
 				A49E9FD7264FF09C00E5B7CA /* Assets.xcassets */,
 				A49E9FD9264FF09C00E5B7CA /* LaunchScreen.storyboard */,
 				A49E9FDC264FF09C00E5B7CA /* Info.plist */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B47F8A2674D4B4007020A1 /* curiousing.mp3 in Resources */,
 				A49E9FDB264FF09C00E5B7CA /* LaunchScreen.storyboard in Resources */,
 				A49E9FD8264FF09C00E5B7CA /* Assets.xcassets in Resources */,
 				A49E9FD6264FF09A00E5B7CA /* Main.storyboard in Resources */,
