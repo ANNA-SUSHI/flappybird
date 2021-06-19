@@ -108,24 +108,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate /* 追加 */ {
     
     
     func setupScoreLabel() {
-            score = 0
-            scoreLabelNode = SKLabelNode()
-            scoreLabelNode.fontColor = UIColor.black
-            scoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 60)
-            scoreLabelNode.zPosition = 100 // 一番手前に表示する
-            scoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-            scoreLabelNode.text = "Score:\(score)"
-            self.addChild(scoreLabelNode)
+        score = 0
+        scoreLabelNode = SKLabelNode()
+        scoreLabelNode.fontColor = UIColor.black
+        scoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 60)
+        scoreLabelNode.zPosition = 100 // 一番手前に表示する
+        scoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        scoreLabelNode.text = "Score:\(score)"
+        self.addChild(scoreLabelNode)
 
-            bestScoreLabelNode = SKLabelNode()
-            bestScoreLabelNode.fontColor = UIColor.black
-            bestScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 90)
-            bestScoreLabelNode.zPosition = 100 // 一番手前に表示する
-            bestScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        bestScoreLabelNode = SKLabelNode()
+        bestScoreLabelNode.fontColor = UIColor.black
+        bestScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 90)
+        bestScoreLabelNode.zPosition = 100 // 一番手前に表示する
+        bestScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
 
-            let bestScore = userDefaults.integer(forKey: "BEST")
-            bestScoreLabelNode.text = "Best Score:\(bestScore)"
-            self.addChild(bestScoreLabelNode)
+        let bestScore = userDefaults.integer(forKey: "BEST")
+        bestScoreLabelNode.text = "Best Score:\(bestScore)"
+        self.addChild(bestScoreLabelNode)
+        
+        itemScore = 0
+        itemScoreLabelNode = SKLabelNode()
+        itemScoreLabelNode.fontColor = UIColor.black
+        itemScoreLabelNode.position = CGPoint(x:10,y:self.frame.height - 120)
+        itemScoreLabelNode.zPosition = 100
+        itemScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        itemScoreLabelNode.text = "item:\(itemScore)"
+        self.addChild(itemScoreLabelNode)
     }
     
     // 以下追加
@@ -337,17 +346,20 @@ func setupGround() {
            wallNode.run(repeatForeverAnimation)
     }
         func restart() {
-                score = 0
-                scoreLabelNode.text = "Score:\(score)"    
-                bird.position = CGPoint(x: self.frame.size.width * 0.2, y:self.frame.size.height * 0.7)
-                bird.physicsBody?.velocity = CGVector.zero
-                bird.physicsBody?.collisionBitMask = groundCategory | wallCategory
-                bird.zRotation = 0
+            score = 0
+            scoreLabelNode.text = "Score:\(score)"
+            itemScore = 0
+            itemScoreLabelNode.text = "itemScore:\(itemScore)"
+            bird.position = CGPoint(x: self.frame.size.width * 0.2, y:self.frame.size.height * 0.7)
+            bird.physicsBody?.velocity = CGVector.zero
+            bird.physicsBody?.collisionBitMask = groundCategory | wallCategory
+            bird.zRotation = 0
 
-                wallNode.removeAllChildren()
+            wallNode.removeAllChildren()
+            itemNode.removeAllChildren()
 
-                bird.speed = 1
-                scrollNode.speed = 1
+            bird.speed = 1
+            scrollNode.speed = 1
         }
             // 画面をタップした時に呼ばれる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
