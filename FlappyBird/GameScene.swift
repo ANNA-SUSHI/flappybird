@@ -152,9 +152,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate /* 追加 */ {
 
             // 衝突のカテゴリー設定
             bird.physicsBody?.categoryBitMask = birdCategory    // ←追加
-            bird.physicsBody?.collisionBitMask = groundCategory | wallCategory    // ←追加
-            bird.physicsBody?.contactTestBitMask = groundCategory | wallCategory    // ←追加
-
+            bird.physicsBody?.collisionBitMask = groundCategory | wallCategory
+            bird.physicsBody?.contactTestBitMask = groundCategory | wallCategory | itemCategory
+           
             // アニメーションを設定
             bird.run(flap)
 
